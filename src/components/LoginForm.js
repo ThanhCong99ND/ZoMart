@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View, Image, TextInput, Button, TouchableOpacity, StatusBar } from "react-native";
 // import Ionicons from 'react-native-vector-icons/Ionicons'
 // import FontAwesome from 'react-native-vector-icons/FontAwesome'
-import {LoginManager} from 'react-native-fbsdk'
+
 export default class LoginForm extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image style={styles.image} source={require('../assets/Splash.jpg')}/>
+        <Image style={styles.image} />
 
         <StatusBar style="auto" />
         <View style={styles.EmailView}>
