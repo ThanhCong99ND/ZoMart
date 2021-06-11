@@ -8,4 +8,8 @@ import Registration from './src/components/Registration.js';
 import WellCome from './src/components/WellCome.js';
 import {name as appName} from './app.json';
 
+
 AppRegistry.registerComponent(appName, () => WellCome);
+
+
+
