@@ -8,8 +8,7 @@ export default class LoginForm extends Component {
     return (
       <View style={styles.container}>
 
-        <Image style={styles.image} 
-        />
+        <Image style={styles.image} source={require('../assets/Splash.png')} />
         
         <StatusBar style="auto" />
         <Text style={styles.Text}>Đăng Ký</Text>
