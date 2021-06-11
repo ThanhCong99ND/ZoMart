@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View, Image, TextInput, Button, TouchableOpacity, StatusBar } from "react-native";
-// import Ionicons from 'react-native-vector-icons/Ionicons'
-// import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
 export default class LoginForm extends Component {
   render() {
@@ -17,7 +17,7 @@ export default class LoginForm extends Component {
           <TextInput
             style={styles.TextInput}
             textContentType='name'
-            keyboardType='email-name'
+            keyboardType='default'
             placeholder=" Họ và Tên"
           />
         </View>
@@ -25,7 +25,7 @@ export default class LoginForm extends Component {
           <TextInput
             style={styles.TextInput}
             textContentType='emailAddress'
-            keyboardType='email-address'
+            keyboardType='number-pad'
             placeholder=" Số điện thoại"
           />
         </View>
@@ -44,7 +44,7 @@ export default class LoginForm extends Component {
             style={styles.TextInput}
             placeholder="Mật khẩu"
             secureTextEntry={true}
-            onChangeText={(password) => setPassword(password)}
+            // onChangeText={(password) => setPassword(password)}
           />
         </View>
 
@@ -53,7 +53,7 @@ export default class LoginForm extends Component {
             style={styles.TextInput}
             placeholder="Nhập lại mật khẩu"
             secureTextEntry={true}
-            onChangeText={(password) => setPassword(password)}
+          //   onChangeText={(password) => setPassword(password)}
           />
         </View>
 
