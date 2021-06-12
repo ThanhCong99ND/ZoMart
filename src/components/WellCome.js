@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import LoginForm from './LoginForm';
 import {
+  AppRegistry,
   Platform,
   StyleSheet,
   Text,

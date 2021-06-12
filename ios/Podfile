@@ -14,8 +14,6 @@ target 'ZoMart' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
-
   target 'ZoMartTests' do
     inherit! :complete
     # Pods for testing

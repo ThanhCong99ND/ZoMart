@@ -1,3 +1,4 @@
+import  AppRegistry  from 'react-native'
 import LoginForm from './LoginForm.js'
 import WellCome from './WellCome.js'
 import Registration from './Registration.js'
