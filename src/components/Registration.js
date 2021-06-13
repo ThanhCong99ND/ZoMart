@@ -3,7 +3,7 @@ import { Platform, StyleSheet, Text, View, Image, TextInput, Button, TouchableOp
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
-export default class LoginForm extends Component {
+export default class Registration extends Component {
   render() {
     return (
       <View style={styles.container}>

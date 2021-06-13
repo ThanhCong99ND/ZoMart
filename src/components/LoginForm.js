@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View, Image, TouchableWithoutFeedback, Keyboard, TextInput, Button, TouchableOpacity, StatusBar } from "react-native";
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import Registration from './Registration';
+import {createStackNavigator} from 'react-navigation-stack';
+
 
 export default class LoginForm extends Component {
   render() {
@@ -12,10 +15,21 @@ export default class LoginForm extends Component {
     //     <View style={styles.line}></View>
     //   </View>
     // }
+    const AppNavigator = createStackNavigator({
+      LoginForm:{
+        screen:LoginForm
+      },
+  Registration:{
+    screen:Registration
+  }
+},{
+  initialRouteName:'LoginForm'
+  }
+)
     const Footder = (props) =>{
       return <View{...props}>
         <Text>Bạn chưa có tài khoản? </Text>
-        <TouchableOpacity> 
+        <TouchableOpacity onPress ={() => this.props.navigation.navigate('Registration')}> 
            <Text style ={styles.register_button}>Đăng ký </Text>
         </TouchableOpacity>
         <Text>tại đây!</Text>

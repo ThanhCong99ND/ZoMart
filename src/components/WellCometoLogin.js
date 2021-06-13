@@ -11,9 +11,6 @@ const AppNavigator = createStackNavigator({
     },
     LoginForm:{
         screen:LoginForm
-    },
-    Registration:{
-        screen:Registration
     }
 },{
     headerMode: 'none',
