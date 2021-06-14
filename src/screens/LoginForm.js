@@ -1,10 +1,21 @@
-import React, { Component } from 'react'
-import { Platform, StyleSheet, Text, View, Image, TouchableWithoutFeedback, Keyboard, TextInput, Button, TouchableOpacity, StatusBar } from "react-native";
-import Ionicons from 'react-native-vector-icons/Ionicons'
-import FontAwesome from 'react-native-vector-icons/FontAwesome'
+import React, {Component} from 'react';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableWithoutFeedback,
+  Keyboard,
+  TextInput,
+  Button,
+  TouchableOpacity,
+  StatusBar,
+} from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Registration from './Registration';
 import {createStackNavigator} from 'react-navigation-stack';
-
 
 export default class LoginForm extends Component {
   render() {
@@ -15,37 +26,33 @@ export default class LoginForm extends Component {
     //     <View style={styles.line}></View>
     //   </View>
     // }
-    const AppNavigator = createStackNavigator({
-      LoginForm:{
-        screen:LoginForm
-      },
-  Registration:{
-    screen:Registration
-  }
-},{
-  initialRouteName:'LoginForm'
-  }
-)
-    const Footder = (props) =>{
-      return <View{...props}>
-        <Text>Bạn chưa có tài khoản? </Text>
-        <TouchableOpacity onPress ={() => this.props.navigation.navigate('Registration')}> 
-           <Text style ={styles.register_button}>Đăng ký </Text>
-        </TouchableOpacity>
-        <Text>tại đây!</Text>
-      </View>
-    }
+
+    const Footder = props => {
+      return (
+        <View {...props}>
+          <Text>Bạn chưa có tài khoản? </Text>
+          <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('Registration')}>
+            <Text style={styles.register_button}>Đăng ký </Text>
+          </TouchableOpacity>
+          <Text>tại đây!</Text>
+        </View>
+      );
+    };
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <View style={styles.container}>
-          <Image style={styles.image} source={require('../assets/Splash.png')} />
+          <Image
+            style={styles.image}
+            source={require('../assets/Splash.png')}
+          />
 
           <StatusBar style="auto" />
           <View style={styles.EmailView}>
             <TextInput
               style={styles.TextInput}
-              textContentType='emailAddress'
-              keyboardType='email-address'
+              textContentType="emailAddress"
+              keyboardType="email-address"
               placeholder=" SĐT/Email"
             />
           </View>
@@ -55,11 +62,12 @@ export default class LoginForm extends Component {
               style={styles.TextInput}
               placeholder="Mật khẩu"
               secureTextEntry={true}
-            // onChangeText={(password) => setPassword(password)}
+              // onChangeText={(password) => setPassword(password)}
             />
           </View>
 
-          <TouchableOpacity style={styles.loginBtn}>
+          <TouchableOpacity style={styles.loginBtn}
+          onPress ={() => this.props.navigation.navigate('TabHome')}>
             <Text style={styles.loginText}>Đăng nhập</Text>
           </TouchableOpacity>
 
@@ -68,15 +76,14 @@ export default class LoginForm extends Component {
           </TouchableOpacity>
 
           {/* <Divider style={styles.divider}></Divider> */}
-            <FontAwesome.Button
-              style={styles.facebookButton}
-              name="facebook"
-              onPress={this.LoginFacebook}
-              backgroundColor="#3B5998"
-            >
-              <Text style={styles.facebooktext}>Đăng nhập bằng Facebook</Text>
-            </FontAwesome.Button>       
-            <Footder style={styles.footer}></Footder>  
+          <FontAwesome.Button
+            style={styles.facebookButton}
+            name="facebook"
+            onPress={this.LoginFacebook}
+            backgroundColor="#3B5998">
+            <Text style={styles.facebooktext}>Đăng nhập bằng Facebook</Text>
+          </FontAwesome.Button>
+          <Footder style={styles.footer}></Footder>
         </View>
       </TouchableWithoutFeedback>
     );
@@ -86,33 +93,32 @@ export default class LoginForm extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FF9900",
-    alignItems: "center",
-    justifyContent: "center",
+    backgroundColor: '#FF9900',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   image: {
     width: 190,
     height: 180,
-
   },
 
   EmailView: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: '#FFFFFF',
     borderRadius: 30,
-    width: "70%",
+    width: '70%',
     height: 45,
     marginTop: 5,
-    alignItems: "center",
+    alignItems: 'center',
     marginBottom: 30,
   },
   PasswordView: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: '#FFFFFF',
     borderRadius: 30,
-    width: "70%",
+    width: '70%',
     height: 45,
     marginTop: -10,
-    alignItems: "center",
+    alignItems: 'center',
     marginBottom: 30,
   },
 
@@ -121,45 +127,40 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     marginLeft: 0,
-
   },
 
   forgot_button: {
     height: 30,
     textDecorationLine: 'underline',
     marginBottom: 20,
-
   },
 
   loginBtn: {
-    width: "70%",
+    width: '70%',
     borderRadius: 25,
     height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#C4C4C4",
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#C4C4C4',
     marginBottom: 10,
     borderWidth: 1,
     borderColor: '#000',
   },
   facebookButton: {
-    width: "70%",
+    width: '70%',
     borderRadius: 25,
     height: 45,
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 10,
-
-
-
   },
   facebooktext: {
     borderRadius: 25,
     justifyContent: 'center',
   },
-  register_button:{
-   fontWeight :'bold',
-   fontSize: 15,
+  register_button: {
+    fontWeight: 'bold',
+    fontSize: 15,
   },
   // line:{
   //   height:1,
@@ -171,14 +172,12 @@ const styles = StyleSheet.create({
   //   flex:1,
   //   textAlign:'center',
   // },
-  footer:{
-    flexDirection:'row',
-    height:30,
-    width:'60%',
-    justifyContent:'center',
-    alignContent:'center',
+  footer: {
+    flexDirection: 'row',
+    height: 30,
+    width: '60%',
+    justifyContent: 'center',
+    alignContent: 'center',
     marginTop: 100,
-  }
+  },
 });
-
-
